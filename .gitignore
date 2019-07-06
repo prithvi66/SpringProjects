@@ -1,0 +1,14 @@
+#####################
+## Folders to Ignore
+#####################
+.metadata/
+.settings/
+target/
+Servers/
+
+#####################
+## Files to Ignore
+#####################
+.project
+.classpath
+.springBeans
