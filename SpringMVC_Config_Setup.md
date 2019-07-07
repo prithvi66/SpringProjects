@@ -9,7 +9,7 @@ Go to web.xml and update the schema definition.
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 </web-app>
 ```
-Create a servlet, the dispatcher servlet which is the entry point for the application in web.xml and specify the exact location to the configuration file. We specify the configuration file in the *<init-param>*. Here our configuration file is the **servlet-config.xml**
+Create a servlet, the dispatcher servlet which is the entry point for the application in web.xml and specify the exact location to the configuration file. We specify the configuration file in the `<init-param>`. Here our configuration file is the **servlet-config.xml**
 ```
 <servlet>
 	<servlet-name>dispatcherServlet</servlet-name>
@@ -27,12 +27,12 @@ The above tag defines our servlet, but we need to also setup a servlet mapping. 
 	<url-pattern>*</url-pattern>
 </servlet-mapping>
 ```
-*<servlet-name>* should be the same as the dispatcher servlet name.
-*<url-pattern>* specifies the file-extensions or what path we are going to accept in the dispatcher servlet.
+`<servlet-name>` should be the same as the dispatcher servlet name.
+`<url-pattern>` specifies the file-extensions or what path we are going to accept in the dispatcher servlet.
 
 Next you have to configure the *servlet-config.xml*. From the above mentioned path(/WEB-INF/config/servlet-config.xml), we need to create a config folder in WEB-INF and then create a Spring bean configuration file(*servlet-config.xml*). To do this, we can go to **File->New->Spring Bean Configuration File**. By default this file only contains beans namespace. We can add context and mvc namespace from namespace tab.
 
-We need to add the *<mvc:annotation-driven/>* tag to tell Spring that we are using annotations to configure our application. We also need to add component scanner which will specify where to start looking for annotations. Check the tag below to add component scanner.
+We need to add the `<mvc:annotation-driven/>` tag to tell Spring that we are using annotations to configure our application. We also need to add component scanner which will specify where to start looking for annotations. Check the tag below to add component scanner.
 ```
 <context:component-scan base-package="com.customer.profile.controller"/>
 ```
